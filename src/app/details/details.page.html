@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Card Details
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p class="please_wait_message" *ngIf="show_please_wait_message">Please wait...</p>
+  <p class="error_message" *ngIf="!show_please_wait_message && !cardDetails.code">Sorry, there are no card details to view</p>
+  
+  <!-- card details start -->
+  <div class="card_details_page" *ngIf="cardDetails.code">
+      <ion-card class="card_basic_details">
+        <ion-card-content>        
+            <div class="image_details">
+                <img src="{{cardDetails.image}}">
+            </div>
+            <ion-item lines="none">
+                <ion-label>
+                  <strong>Code:</strong> {{cardDetails.code}}
+                  <p><strong>Suit:</strong> {{cardDetails.suit|titlecase}}</p>
+                  <p><strong>Value:</strong> {{cardDetails.value|titlecase}}</p>
+                </ion-label>
+            </ion-item>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="card_descriptions">
+        <ion-card-content>        
+            <h3>Descriptions</h3>
+            <p>{{cardDetails.descriptions}}</p>
+        </ion-card-content>
+    </ion-card>
+  </div>
+  <!-- card details end -->
+</ion-content>

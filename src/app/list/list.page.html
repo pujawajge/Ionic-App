@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Cards
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="search_keyword" (ionChange)="get_search_cards($event)" *ngIf="card_list?.length>=1 && !show_please_wait_message"></ion-searchbar>
+  <!-- list of cards start-->
+  <ion-list *ngIf="cards?.length>=1" class="cards_list">
+    <ion-item *ngFor="let card of cards" routerDirection="forward" routerLink="/details/{{card.code}}">
+      <img [src]="card.image" slot="start">
+      <ion-label>
+        <strong>Suit:</strong> {{card.suit|titlecase}}
+        <p><strong>Value:</strong> {{card.value|titlecase}}</p>
+     </ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- list of cards end-->
+
+  <!-- infinite scroll for load more data after 12 recods-->
+  <ion-infinite-scroll (ionInfinite)="nextCards($event)" *ngIf="cards?.length >=12 && !hideInfiniteScroll">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+  <p class="please_wait_message" *ngIf="show_please_wait_message">Please wait...</p>
+  <p class="error_message" *ngIf="!show_please_wait_message && cards?.length<=0">Sorry, there are no card details to view</p>
+</ion-content>

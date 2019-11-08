@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Profile Details
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="profile_details_div">
+		<div class="background_div">
+			<img src="https://cdn4.vectorstock.com/i/1000x1000/50/68/avatar-icon-of-girl-in-a-baseball-cap-vector-16225068.jpg">
+		</div>
+		<div class="basic_details">
+			<h4><strong>Pooja Chaudhary</strong></h4>
+			<p>Full Stack Developer</p>
+			<ul class="other_details">
+				<li><ion-icon name="mail"></ion-icon> poojawchaudhary@gmail.com</li>
+				<li><ion-icon name="call"></ion-icon> +91 8830086233 / +91 8600458548</li>
+			</ul>
+		</div>
+  </div>
+
+	<ion-card class="about_assignments">
+		<ion-card-header>
+  		<ion-card-title>About Assignment</ion-card-title>
+		</ion-card-header>
+		<ion-card-content>
+      <ul class="about_details_list">
+        <li><strong>Profile Page - </strong>Shows basic information about me and information about assignment.</li>
+        <li><strong>Cards Page - </strong>Shows list of playing cards with following details.
+            <ul>
+                <li>API used - https://deckofcardsapi.com/api/deck/new/draw/?count=52</li>
+                <li>52 playing cards show in the list.</li>
+                <li>Added pagination - Pages: 5, Per page cards: 12.</li>
+                <li>Search functionality - You can search by suit, value & code.</li>
+            </ul>
+        </li>
+        <li><strong>Details Page - </strong>Shows list of playing cards with following details.
+            <ul>
+                <li>Every card has unique value "code".</li>
+                <li>Once you click on card from the list, then it will open card details page based on "code" value with other details like a suit, code, value, description, image, etc.</li>
+                <li>There is no description is available in the API, so I have added it same description for all but dynamically.</li>
+            </ul>
+        </li>
+      </ul>
+		</ion-card-content>
+	</ion-card>
+</ion-content>

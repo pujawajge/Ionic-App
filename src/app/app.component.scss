@@ -1,0 +1,25 @@
+.menu_profile_details{
+    --background:#00bcd4;
+    color:#fff;
+    padding-top:10px;
+    padding-bottom:10px;
+    p{
+        color:#fff;
+    }
+}
+
+.app_drawer_page{    
+    .drawer_icon{    
+        background: #ffd800;
+        padding: 10px;
+        .logo_image{
+            width: 100%;
+            padding: 45px;
+        }
+    }
+    .menu_list{
+        ion-icon{        
+            margin-right:0.7em;
+        }
+    }
+}
